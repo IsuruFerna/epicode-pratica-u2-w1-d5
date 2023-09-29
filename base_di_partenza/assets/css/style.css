@@ -15,6 +15,15 @@ font-family: 'Spectral', serif;
    box-sizing: border-box;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+   line-height: 1.2em;
+}
+
 main,
 h4,
 .btn-article a,
@@ -27,6 +36,9 @@ header {
    font-family: "Roboto", sans-serif;
    background-color: #ffc017;
    width: 100%;
+   position: sticky;
+   top: 0;
+   z-index: 2;
 }
 
 nav {
@@ -152,6 +164,7 @@ p {
 .content-trending,
 .content-article {
    margin-top: 1em;
+   width: 80%;
 }
 
 .subtitle-trending {
@@ -191,6 +204,7 @@ p {
 
 .article-time-stamp {
    display: flex;
+   align-items: center;
 }
 
 .btn-article a {
@@ -204,6 +218,7 @@ p {
 
 .article {
    display: flex;
+   margin-bottom: 3em;
 }
 
 .container-lower {
@@ -218,6 +233,7 @@ p {
    margin: 1em 0;
    padding-bottom: 2em;
    border-bottom: 2px solid #e6e7e7;
+   max-width: 380px;
 }
 
 .aside-content {
@@ -247,6 +263,7 @@ footer ul {
    list-style: none;
    display: flex;
    flex-wrap: wrap;
+   max-width: 400px;
 }
 
 footer ul li {
@@ -256,4 +273,25 @@ footer ul li {
 
 footer ul li a {
    text-decoration: none;
+}
+
+.article-buttom {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.article-img {
+   width: 35%;
+   height: 100%;
+   margin-top: 1.2em;
+}
+
+.content-article {
+   width: 65%;
+   padding-right: 1em;
+}
+.article-img img {
+   width: 100%;
+   object-fit: cover;
 }
