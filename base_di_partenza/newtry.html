@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+      <style>
+         .word-blue {
+            color: blue;
+            opacity: 0;
+            transition: all 0.3s ease-in-out;
+         }
+
+         .word {
+            opacity: 1;
+            color: red;
+         }
+      </style>
+   </head>
+   <body>
+      <div class="word-container">
+         <p class="word-text">
+            <span class="word-blue">hi</span>
+            <span class="word-blue">hi</span>
+            <span class="word-blue">hi</span>
+            <span class="word-blue">hi</span>
+         </p>
+      </div>
+
+      <script>
+         let elements = document.querySelectorAll(".word-text span");
+
+         setInterval(function () {
+            console.log("working");
+            elements.forEach(function (element) {
+               if (element.classList.contains("word")) {
+                  element.classList.remove("word");
+               } else {
+                  element.classList.add("word");
+               }
+            });
+         }, 1000);
+      </script>
+   </body>
+</html>
