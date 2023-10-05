@@ -42,6 +42,7 @@ document.addEventListener("scroll", function (e) {
 });
 
 // letter animation fully generate by given string
+// I wanted a light-weight file on load in this case. so I tried to implement it in this way
 // available in "letter-animation.html"
 const rawLetterRenderAnimation = function () {
    const letters = `M M M M M M M M M M M M M M

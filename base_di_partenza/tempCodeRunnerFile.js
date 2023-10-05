@@ -1,2 +1,0 @@
-      mainArr.push(arr);
-      arr = [];
