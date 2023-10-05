@@ -1,4 +1,5 @@
 document.addEventListener("scroll", function (e) {
+   // nav color change
    const partYellow = document.querySelector(".container");
    const header = document.querySelector("header");
    const heightYellow = partYellow.offsetHeight;
@@ -7,6 +8,36 @@ document.addEventListener("scroll", function (e) {
       header.classList.add("change-color");
    } else {
       header.classList.remove("change-color");
+   }
+
+   // aside make sticky
+   const aside = document.querySelector(".container-right aside");
+   const footer = document.querySelector("footer");
+
+   const asideHeight = aside.offsetHeight;
+   console.log("offset height: ", asideHeight);
+   const containerTrending =
+      document.getElementsByClassName("container-trending")[0];
+   const containerTrendingButtom =
+      containerTrending.getBoundingClientRect().bottom;
+   const containerLower = document.getElementsByClassName("container-lower")[0];
+   const containerLowerStyle =
+      containerLower.currentStyle || window.getComputedStyle(containerLower);
+   const heightTopAside =
+      header.offsetHeight +
+      parseInt(containerLowerStyle.marginTop.replace("px", ""));
+   const footerStyle = footer.currentStyle || window.getComputedStyle(footer);
+   const footerMarginTop = parseInt(footerStyle.marginTop.replace("px", ""));
+
+   // add class sticky and calculated top value
+   if (containerTrendingButtom <= header.offsetHeight) {
+      aside.classList.add("sticky");
+      aside.style.top = heightTopAside + "px";
+      footer.classList.add("sticky");
+      footer.style.top = heightTopAside + asideHeight + footerMarginTop + "px";
+   } else {
+      aside.classList.remove("sticky");
+      footer.classList.remove("sticky");
    }
 });
 
